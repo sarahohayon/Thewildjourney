@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Body of Water — nature &amp; water-based healing for the body</title>
-<meta name="description" content="The Body of Water — restoring the relationship with your body, your human tribe, and the living world. Nature, especially water, helps you find the way home to yourself. Trauma-informed healing for women, led by a marine & freshwater scientist who walked the path herself.">
+<title>Human Nature Healing — nature-based healing for the body that holds the past</title>
+<meta name="description" content="Human Nature Healing — restoring the relationship with your body, your human tribe, and the living world. Nature, on land and in water, helps you find the way home to yourself. Trauma-informed healing for women, led by a marine & freshwater scientist who walked the path herself.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -15,27 +15,34 @@
 <!-- NAV -->
 <header class="nav">
   <div class="nav-inner">
-    <a class="brand" href="index.html">The Body of <span>Water</span></a>
+    <a class="brand" href="index.html">Human Nature <span>Healing</span></a>
     <nav class="nav-links" id="navLinks">
-      <a href="#nature">Nature &amp; water</a>
+      <a href="#how">How it heals</a>
       <a href="trauma.html">Understanding trauma</a>
-      <a href="#story">My story</a>
-      <a href="#offerings">Offerings</a>
-      <a href="#community">Community</a>
+      <span class="has-dropdown">
+        <a href="#offerings">The path for healing</a>
+        <span class="dropdown">
+          <a href="#offerings">The Body of Water<small>Water healing workshop</small></a>
+          <a href="#offerings">Forest &amp; Earth<small>Land-based work · coming</small></a>
+          <a href="#offerings">The 12-Week Program<small>Coming Home</small></a>
+          <a href="#offerings">The Retreat<small>Palmiet River · coming</small></a>
+        </span>
+      </span>
+      <a href="journey.html">My story</a>
       <a class="nav-cta" href="#newsletter">Free guide</a>
     </nav>
     <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">&#9776;</button>
   </div>
 </header>
 
-<!-- 1 · HOPEFUL INVITATION (HERO) -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-bg" style="background-image:url('photos/opt/Opt-1-2.jpg')"></div>
   <div class="container">
-    <p class="kicker">Nature- &amp; water-based trauma healing</p>
-    <h1 class="brandmark">The Body of Water</h1>
+    <p class="kicker">Nature-based healing — on land, and in water</p>
+    <h1 class="brandmark">Human Nature Healing</h1>
     <p class="hero-sub">Restoring the relationship with your body, your human tribe, and the living world around you.</p>
-    <p>Nature, especially water, can help you find the way home to yourself — a gentle, body-based path for healing and growth, walked in the company of other women.</p>
+    <p>Nature — on land and in water — can help you find the way home to yourself. A gentle, body-based path for healing and growth, walked in the company of other women.</p>
     <div class="hero-cta">
       <a class="btn btn-primary" href="#offerings">Start your healing journey</a>
       <a class="btn btn-light" href="journey.html">Read my story</a>
@@ -43,30 +50,37 @@
   </div>
 </section>
 
-<!-- OFFERINGS (what we do — made clear early) -->
+<!-- THE PATH FOR HEALING (offerings) -->
 <section id="offerings">
   <div class="container">
     <div class="eyebrow-center reveal">
-      <p class="kicker">What we do</p>
-      <h2>Three ways to begin</h2>
-      <p class="lead">Each one restores the same three relationships childhood trauma breaks — with yourself, through your body; with the people around you; and with the living world.</p>
+      <p class="kicker">Where to begin</p>
+      <h2>The path for healing</h2>
+      <p class="lead">Different doors, one path — each restoring the same three relationships childhood trauma breaks: with yourself, through your body; with the people around you; and with the living world.</p>
     </div>
     <div class="offer-grid">
-      <div class="offer-card reveal">
+      <div class="offer-card reveal" id="offer-water">
         <div class="tagnum">Begin here</div>
-        <h3>The Workshop — <em>To Be Reborn</em></h3>
-        <div class="meta">Half-day by the sea · a circle of 8–10 women</div>
-        <p>Understand what childhood trauma really did to you, and leave with a handful of body-based tools to steady your day. Somatic practice on land and in the sea — water always optional.</p>
+        <h3>The Body of Water</h3>
+        <div class="meta">Water healing workshop · a circle of 8–10 women</div>
+        <p>Understand what childhood trauma did to you, and leave with a handful of body-based tools to steady your day. Somatic practice on land and in the sea — water always optional.</p>
         <div class="when">Mediterranean · October 2026</div>
       </div>
-      <div class="offer-card reveal">
+      <div class="offer-card reveal" id="offer-earth">
+        <div class="tagnum">In the wild</div>
+        <h3>Forest &amp; Earth</h3>
+        <div class="meta">Grounding, land-based healing</div>
+        <p>The same path, on solid ground — for the days, and the women, who feel safest held by the forest and the earth. Taking shape now.</p>
+        <div class="when">Coming</div>
+      </div>
+      <div class="offer-card reveal" id="offer-program">
         <div class="tagnum">Go deeper</div>
         <h3>The 12-Week Program — <em>Coming Home</em></h3>
-        <div class="meta">Small online cohort · land &amp; water practice</div>
-        <p>A season of guided practice and gentle teaching. Where the workshop opens a door, this walks you through the whole house — regulation, reconnection, and belonging, week by week.</p>
+        <div class="meta">Small online cohort · land &amp; water</div>
+        <p>A season of guided practice and gentle teaching. Where a workshop opens a door, this walks you through the whole house — regulation, reconnection, and belonging, week by week.</p>
         <div class="when">Cohorts forming</div>
       </div>
-      <div class="offer-card reveal">
+      <div class="offer-card reveal" id="offer-retreat">
         <div class="tagnum">The flagship</div>
         <h3>The Retreat — <em>Palmiet River</em></h3>
         <div class="meta">Multi-day immersion in wild nature</div>
@@ -78,7 +92,7 @@
   </div>
 </section>
 
-<!-- 2 · THE SOURCE OF THE PAIN -->
+<!-- THE SOURCE OF THE PAIN -->
 <section id="approach" class="section-tint">
   <div class="container">
     <div class="eyebrow-center reveal">
@@ -99,7 +113,24 @@
   </div>
 </section>
 
-<!-- 4 · THE POWER OF NATURE & THE OCEAN -->
+<!-- HOW THE HEALING WORKS — FOUR LAYERS -->
+<section id="how">
+  <div class="container">
+    <div class="eyebrow-center reveal">
+      <p class="kicker">The four layers</p>
+      <h2>How the healing works</h2>
+      <p class="lead">Four layers hold everything here — and each one grew straight out of my own path home.</p>
+    </div>
+    <div class="four-grid">
+      <div class="layer-card reveal"><div class="layer-num">01</div><h3>Understand the roots</h3><p>Make sense of what really happened — not “what's wrong with you,” but what happened, and how it shaped your brain and body. Here a scientist's training serves you: the real science of trauma, made clear.</p></div>
+      <div class="layer-card reveal"><div class="layer-num">02</div><h3>Move it through the body</h3><p>Understanding isn't enough. Healing has to move — from the mind into the body — through breath, movement, nature, and above all, water.</p></div>
+      <div class="layer-card reveal"><div class="layer-num">03</div><h3>Heal in relationship</h3><p>The wound happened with others; the healing happens with others too. As mammals, we were never meant to heal alone. We do this held by a circle.</p></div>
+      <div class="layer-card reveal"><div class="layer-num">04</div><h3>Walk it with someone who has</h3><p>Not guided by theory alone, but companioned by someone who has walked this path herself — not as a therapist, but as an experienced guide who can point at what helped.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- NATURE & THE OCEAN -->
 <section id="nature" class="section-tide">
   <div class="container">
     <div class="split reverse">
@@ -108,22 +139,21 @@
         <p class="kicker" style="color:rgba(255,255,255,.8)">Why nature — and why water</p>
         <h2>The nervous system remembers how to settle. Nature is one of its oldest teachers.</h2>
         <p>For millions of years, our brains evolved in real jungles — by rivers, along coastlines, in the ocean — not in cities of concrete and glass. Your body is tuned to regulate in the natural world. Returning to it isn't an escape; it's coming back to the conditions you were built for.</p>
-        <p>A calm, living landscape asks nothing of you — and a nervous system in the presence of something steady begins, quietly, to steady itself. This is regulation through the body, not insight about it.</p>
         <p>And water most of all. Cold water on the face triggers a built-in calming reflex within seconds. Being held by the sea — its buoyancy, its rhythm, the sense of being carried — offers the body a rare experience of safety. After ten years of my life spent in and under the water, I have felt this again and again: the ocean is not a backdrop to the healing. It is part of it.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 3 · MY STORY (short teaser) -->
+<!-- MY STORY (teaser) -->
 <section id="story">
   <div class="container">
     <div class="split">
-      <div class="split-img portrait-img reveal"><img src="photos/opt/Opt--4.jpg" alt="Sarah, founder of The Body of Water"></div>
+      <div class="split-img portrait-img reveal"><img src="photos/opt/Opt--4.jpg" alt="Sarah, founder of Human Nature Healing"></div>
       <div class="split-text reveal">
         <p class="kicker">My story</p>
         <h2>I spent my life healing nature — while quietly struggling to heal myself.</h2>
-        <p>I'm Sarah. I'm a marine and freshwater ecologist and a conservation scientist, and from the outside my life in the water looked like a success. Inside, I carried the anger, shame, and low self-worth of childhood trauma that no achievement could touch — and, for a long time, a fear that it would keep me from the life, and the relationships, I longed for.</p>
+        <p>I'm Sarah. I'm a marine and freshwater ecologist and a conservation scientist, and from the outside my life in the water looked like a success. Inside, I carried the anger, shame, and low self-worth of childhood trauma that no achievement could touch.</p>
         <p>The way back wasn't through understanding it all. It was through my body, the ocean, and somatic practice — slowly coming home to myself. That path is what I now walk with other women.</p>
         <a class="btn btn-ghost" href="journey.html">Read my full journey</a>
       </div>
@@ -145,7 +175,7 @@
   </div>
 </section>
 
-<!-- NEWSLETTER / LEAD MAGNET -->
+<!-- NEWSLETTER -->
 <section id="newsletter" class="section-tint">
   <div class="container">
     <div class="news reveal">
@@ -173,16 +203,16 @@
   <div class="container">
     <div class="foot-grid">
       <div>
-        <div class="foot-brand">The Body of Water</div>
-        <p style="max-width:40ch;color:#c9c5b9">Nature- and water-based healing for the body that still holds the past — on land, and in water. Come home to yourself, with the wild.</p>
+        <div class="foot-brand">Human Nature Healing</div>
+        <p style="max-width:40ch;color:#c9c5b9">Nature-based healing for the body that still holds the past — on land, and in water. Come home to yourself, with the wild.</p>
       </div>
       <div>
         <div class="foot-h">Explore</div>
         <div class="foot-links">
-          <a href="#approach">The approach</a>
-          <a href="#nature">Nature &amp; water</a>
+          <a href="#how">How it heals</a>
+          <a href="trauma.html">Understanding trauma</a>
           <a href="journey.html">My story</a>
-          <a href="#offerings">Offerings</a>
+          <a href="#offerings">The path for healing</a>
         </div>
       </div>
       <div>
@@ -195,8 +225,8 @@
         </div>
       </div>
     </div>
-    <p class="disclaimer">The Body of Water offers education and body-based practices as a complement to professional care. It is not therapy, medical treatment, or a crisis service, and is not a substitute for them. If you are in crisis, please reach out to a qualified professional or a local emergency service.</p>
-    <p class="copyright">© 2026 The Body of Water · Sarah Ohayon</p>
+    <p class="disclaimer">Human Nature Healing offers education and body-based practices as a complement to professional care. It is not therapy, medical treatment, or a crisis service, and is not a substitute for them. If you are in crisis, please reach out to a qualified professional or a local emergency service.</p>
+    <p class="copyright">© 2026 Human Nature Healing · Sarah Ohayon</p>
   </div>
 </footer>
 
