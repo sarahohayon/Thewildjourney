@@ -116,8 +116,8 @@
   <div class="container">
     <div class="eyebrow-center reveal">
       <p class="kicker">Begin your journey</p>
-      <h2>Four doors, one path</h2>
-      <p class="lead">Each door restores the same three relationships childhood trauma breaks: with yourself, through your body; with the people around you; and with the living world.</p>
+      <h2>Different doors, your own way home</h2>
+      <p class="lead">There's no single route through complex trauma. Each door restores the same three relationships it breaks, with yourself, through your body; with the people around you; and with the living world, and you're free to find the way that fits you.</p>
     </div>
     <div class="offer-grid">
       <div class="offer-card reveal" id="offer-water">
@@ -231,6 +231,17 @@
 const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+function widthOf(el){const d=el.style.display;el.style.display='inline-block';const w=el.getBoundingClientRect().width;el.style.display=d;return w;}
+function fitHeroTag(){
+  const h=document.querySelector('.hero .brandmark'),t=document.querySelector('.hero-tag');
+  if(!h||!t)return;
+  const target=widthOf(h);
+  t.style.whiteSpace='nowrap';t.style.display='inline-block';t.style.fontSize='20px';
+  const cur=t.getBoundingClientRect().width;
+  if(cur>0){t.style.fontSize=Math.max(11,Math.min(26,20*target/cur)).toFixed(2)+'px';}
+}
+window.addEventListener('load',fitHeroTag);
+window.addEventListener('resize',()=>{clearTimeout(window.__ft);window.__ft=setTimeout(fitHeroTag,120);});
 </script>
 </body>
 </html>
