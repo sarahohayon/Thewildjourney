@@ -1,19 +1,21 @@
 /* Human Nature Healing — brand stylesheet (v2, rebuilt) */
 :root{
-  --forest:#2E4034;   /* deep grounding green */
-  --forest2:#3C5445;
-  --tide:#3A5A6B;     /* signature water blue — The Body of Water */
-  --tide2:#5B7C8C;
-  --sage:#8FA68C;
-  --earth:#6B4F3B;
-  --clay:#B6643C;     /* single warm accent */
-  --cream:#F6F1E7;    /* page = paper, not screen */
-  --cream2:#EFE7D7;
-  --ink:#23281F;      /* almost-but-not-quite black */
-  --stone:#8A8577;
+  /* watery-earthly palette — water: teal/aqua/sage · earth: terracotta/ochre/brown · warm off-white */
+  --forest:#33544A;   /* deep teal-green, grounding (bridges water & earth) */
+  --forest2:#3E6357;
+  --tide:#356E77;     /* signature deep teal — The Body of Water */
+  --tide2:#6FA3A4;    /* soft aqua */
+  --sage:#94A97C;     /* olive-sage green */
+  --earth:#6E4A33;    /* warm brown */
+  --clay:#B4623A;     /* terracotta / rust — warm accent */
+  --ochre:#C68A3E;    /* mustard / ochre — second warm accent */
+  --cream:#F4EEE1;    /* warm off-white page */
+  --cream2:#EBE1CD;
+  --ink:#292A22;      /* warm almost-black */
+  --stone:#8C8472;
   --serif:"Lora",Georgia,serif;
   --sans:"Nunito",system-ui,-apple-system,sans-serif;
-  --maxw:1120px;
+  --maxw:1280px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;font-size:18.5px}
@@ -76,15 +78,15 @@ section{padding:88px 0}
 .section-tint{background:var(--cream2)}
 .section-forest{background:var(--forest);color:#eae7dd}
 .section-forest h2,.section-forest h3{color:#fff}
-.section-tide{background:linear-gradient(160deg,#33505f,#3A5A6B);color:#eef2f3}
+.section-tide{background:linear-gradient(160deg,#2C5A61,#356E77);color:#eef2f3}
 .section-tide h2,.section-tide h3{color:#fff}
-.eyebrow-center{max-width:60ch;margin:0 auto 44px;text-align:center}
+.eyebrow-center{max-width:68ch;margin:0 auto 44px;text-align:center}
 .eyebrow-center h2{margin-top:.2em}
 
 /* offerings */
 .offer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:24px}
 .offer-card{background:#fff;border-radius:16px;padding:30px 26px;border:1px solid rgba(138,133,119,.18);box-shadow:0 6px 24px rgba(46,64,52,.05);display:flex;flex-direction:column}
-.offer-card .tagnum{font-family:var(--serif);font-size:.85rem;color:var(--clay);letter-spacing:.05em;margin-bottom:10px}
+.offer-card .tagnum{font-family:var(--serif);font-size:.85rem;color:var(--ochre);letter-spacing:.05em;margin-bottom:10px}
 .offer-card h3{color:var(--forest);margin-bottom:.35em}
 .offer-card .meta{font-size:.85rem;color:var(--stone);margin-bottom:14px}
 .offer-card p{font-size:.97rem;color:#3a4237;flex:1}
@@ -138,7 +140,7 @@ footer a:hover{color:#fff}
 
 /* timeline (journey) — single left-aligned spine */
 .timeline{position:relative;max-width:760px;margin:0 auto;padding:10px 0}
-.timeline::before{content:"";position:absolute;left:22px;top:8px;bottom:8px;width:2px;background:rgba(58,90,107,.28)}
+.timeline::before{content:"";position:absolute;left:22px;top:8px;bottom:8px;width:2px;background:rgba(53,110,119,.28)}
 .tl-item{position:relative;padding-left:62px;margin-bottom:46px}
 .tl-media{margin-top:16px;border-radius:14px;overflow:hidden;box-shadow:0 12px 34px rgba(46,64,52,.14);aspect-ratio:16/10;max-width:560px}
 .tl-media img{width:100%;height:100%;object-fit:cover}
@@ -150,7 +152,7 @@ footer a:hover{color:#fff}
 .placeholder span{opacity:.95;max-width:32ch}
 
 /* prose + lists (content pages) */
-.prose{max-width:720px;margin:0 auto}
+.prose{max-width:860px;margin:0 auto}
 .prose h2{margin-top:1.4em}
 ul.plist{list-style:none;padding:0;margin:0 0 1.3em}
 ul.plist li{position:relative;padding-left:26px;margin-bottom:.55em;color:#3a4237}
@@ -175,6 +177,47 @@ ul.plist li::before{content:"";position:absolute;left:4px;top:.62em;width:7px;he
 .layer-card p{font-size:.95rem;color:#3a4237;margin:0}
 @media(max-width:1024px){.four-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.four-grid{grid-template-columns:1fr}}
+
+/* hero variant with no photo (brand gradient) */
+.hero--brand{background:linear-gradient(158deg,var(--forest) 0%,#2C5A61 55%,var(--tide) 100%);min-height:78vh}
+.hero--brand::after{display:none}
+.hero .hero-lead{font-size:1.12rem;max-width:52ch}
+.hero-tag{font-family:var(--sans);text-transform:uppercase;letter-spacing:.15em;font-size:.98rem;font-weight:700;color:rgba(255,255,255,.9);margin:.1em 0 .8em;text-shadow:0 1px 12px rgba(0,0,0,.25)}
+.hero-cred{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:24px;max-width:62ch;border-top:1px solid rgba(255,255,255,.22);padding-top:18px}
+.hero-cred p{margin:0;font-size:.92rem;color:rgba(255,255,255,.85);max-width:42ch}
+.hero-cred strong{color:#fff;font-weight:700}
+.hero-cred .btn{white-space:nowrap}
+/* one-line hero titles on wide screens */
+.hero h1.brandmark{max-width:none}
+@media(min-width:821px){
+  .hero h1.brandmark,.hero-sub{white-space:nowrap}
+  .hero-sub{max-width:none}
+}
+
+/* text-only narrative block (replaces split when no photo) */
+.narrative{max-width:820px}
+.section-tide .narrative .kicker{color:rgba(255,255,255,.82)}
+
+/* offering card button */
+.offer-card .btn{margin-top:18px;align-self:flex-start}
+
+/* lecture / CTA band */
+.cta-band{background:var(--forest);color:#eae7dd;border-radius:20px;padding:44px 40px;text-align:center;max-width:860px;margin:0 auto}
+.cta-band h2{color:#fff;margin-bottom:.3em}
+.cta-band .lead{color:#d9d5c9}
+.cta-band .btn{margin-top:8px}
+
+/* pain card titles */
+.pain-card h3{color:var(--forest);font-size:1.12rem;margin:0 0 .35em}
+.pain-card.p1{border-left-color:var(--tide)}
+.pain-card.p2{border-left-color:var(--clay)}
+.pain-card.p3{border-left-color:var(--sage)}
+
+/* coming-soon page */
+.coming{min-height:66vh;display:flex;align-items:center;text-align:center}
+.coming .inner{max-width:640px;margin:0 auto}
+.coming .badge{display:inline-block;font-family:var(--sans);text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;font-weight:700;color:var(--clay);background:var(--cream2);padding:.5em 1.1em;border-radius:999px;margin-bottom:22px}
+.coming h1{color:var(--forest)}
 
 /* reveal animation (gentle) */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
