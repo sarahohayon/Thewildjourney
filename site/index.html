@@ -19,6 +19,7 @@
     <nav class="nav-links" id="navLinks">
       <a href="trauma.html">Understanding trauma</a>
       <a href="nature-of-healing.html">The nature of healing</a>
+      <a href="publications.html">Publications &amp; media</a>
       <span class="has-dropdown">
         <a href="offerings.html">Start your healing journey</a>
         <span class="dropdown">
@@ -39,6 +40,7 @@
   <div class="container">
     <h1 class="brandmark">Human Nature Healing</h1>
     <p class="hero-tag">Trauma-informed · Nature-based somatic healing · Land &amp; water practices</p>
+    <p class="hero-identity">Dr. Sarah Ohayon — Marine Scientist. Somatic guide. Ocean protector.</p>
     <p class="hero-lead">Healing trauma by restoring the relationship with your body, the people around you, and the living world. A gentle, body-based path walked in the company of other women.</p>
     <div class="hero-cta">
       <a class="btn btn-primary" href="offerings.html">Start your healing journey</a>
@@ -107,6 +109,22 @@
       <div class="layer-card reveal"><div class="layer-num">02</div><h3>Move it through the body, in nature</h3><p>Understanding isn't enough. Healing has to move, from the mind into the body, through breath, movement, nature, and above all, water.</p></div>
       <div class="layer-card reveal"><div class="layer-num">03</div><h3>Heal in relationship</h3><p>The wound happened with others; the healing happens with others too. As mammals, we were never meant to heal alone. We do this held by a circle.</p></div>
       <div class="layer-card reveal"><div class="layer-num">04</div><h3>Walk it with someone who has</h3><p>Not guided by theory alone, but companioned by someone who has walked this path herself, not as a therapist, but as an experienced guide who can point at what helped.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- YOUR GUIDE -->
+<section id="guide">
+  <div class="container">
+    <div class="split">
+      <div class="split-img placeholder reveal" style="aspect-ratio:1/1;max-width:440px"><span>A portrait of Dr. Sarah Ohayon goes here.</span></div>
+      <div class="split-text reveal">
+        <p class="kicker">Your guide</p>
+        <h2>Dr. Sarah Ohayon</h2>
+        <p>A PhD ecologist who spent her entire life in and under the water, and healed her own complex trauma through the body, nature, and water. Not a therapist: a scientist who lived it, and an experienced guide who can point at what helped.</p>
+        <p>She now walks this path with other women, through a method she calls <strong>The Body of Water</strong>, grounded in peer-reviewed trauma science and in a life spent protecting the ocean.</p>
+        <a class="btn btn-ghost" href="journey.html">Read my full story →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -209,6 +227,7 @@
         <div class="foot-links">
           <a href="trauma.html">Understanding trauma</a>
           <a href="nature-of-healing.html">The nature of healing</a>
+          <a href="publications.html">Publications &amp; media</a>
           <a href="offerings.html">Start your healing journey</a>
           <a href="journey.html">My story</a>
         </div>
@@ -232,16 +251,17 @@ const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isInterse
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
 function widthOf(el){const d=el.style.display;el.style.display='inline-block';const w=el.getBoundingClientRect().width;el.style.display=d;return w;}
-function fitHeroTag(){
-  const h=document.querySelector('.hero .brandmark'),t=document.querySelector('.hero-tag');
+function fitToTitle(sel,minPx,maxPx){
+  const h=document.querySelector('.hero .brandmark'),t=document.querySelector(sel);
   if(!h||!t)return;
   const target=widthOf(h);
   t.style.whiteSpace='nowrap';t.style.display='inline-block';t.style.fontSize='20px';
   const cur=t.getBoundingClientRect().width;
-  if(cur>0){t.style.fontSize=Math.max(11,Math.min(26,20*target/cur)).toFixed(2)+'px';}
+  if(cur>0){t.style.fontSize=Math.max(minPx,Math.min(maxPx,20*target/cur)).toFixed(2)+'px';}
 }
-window.addEventListener('load',fitHeroTag);
-window.addEventListener('resize',()=>{clearTimeout(window.__ft);window.__ft=setTimeout(fitHeroTag,120);});
+function fitHero(){ fitToTitle('.hero-tag',11,26); fitToTitle('.hero-identity',12,30); }
+window.addEventListener('load',fitHero);
+window.addEventListener('resize',()=>{clearTimeout(window.__ft);window.__ft=setTimeout(fitHero,120);});
 </script>
 </body>
 </html>
