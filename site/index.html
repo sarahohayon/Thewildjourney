@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="healing.css?v=5">
+<link rel="stylesheet" href="healing.css?v=6">
 </head>
 <body>
 
@@ -58,8 +58,8 @@
   <div class="container">
     <div class="eyebrow-center reveal">
       <p class="kicker">If this is you</p>
-      <h2>Childhood is our genesis, shaping the very foundation of who we become.</h2>
-      <p class="lead">Childhood trauma can leave a lifetime imprint, deeply affecting your well-being in three main domains. If you recognise yourself here, you are in the right place to start your journey.</p>
+      <h2>Childhood is our genesis</h2>
+      <p class="lead">Childhood experiences shape the foundations of who we become. Childhood trauma can leave a lifetime imprint, deeply affecting your well-being in three main domains. If you recognise yourself here, you are in the right place to start your journey.</p>
     </div>
     <div class="pain-grid">
       <div class="pain-card p1 reveal">
@@ -258,19 +258,20 @@
 const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
-function widthOf(el){const d=el.style.display;el.style.display='inline-block';const w=el.getBoundingClientRect().width;el.style.display=d;return w;}
-function fitToTitle(sel,minPx,maxPx){
-  const h=document.querySelector('.hero .brandmark'),t=document.querySelector(sel);
-  if(!h||!t)return;
-  const target=widthOf(h);
-  t.style.whiteSpace='nowrap';t.style.display='inline-block';t.style.fontSize='20px';
-  const cur=t.getBoundingClientRect().width;
-  if(cur>0){t.style.fontSize=Math.max(minPx,Math.min(maxPx,20*target/cur)).toFixed(2)+'px';}
+function textW(el){const r=document.createRange();r.selectNodeContents(el);return r.getBoundingClientRect().width;}
+function fitHero(){
+  const title=document.querySelector('.hero .brandmark'),tag=document.querySelector('.hero-tag');
+  if(!title||!tag)return;
+  const target=textW(title);
+  if(!target)return;
+  tag.style.whiteSpace='nowrap';
+  let size=26;tag.style.fontSize=size+'px';
+  let g=0;
+  while(textW(tag)>target&&size>8&&g<400){size-=0.5;tag.style.fontSize=size+'px';g++;}
 }
-function fitHero(){ fitToTitle('.hero-tag',10,34); }
 window.addEventListener('load',fitHero);
 if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fitHero);}
-setTimeout(fitHero,400);
+setTimeout(fitHero,300);setTimeout(fitHero,800);
 window.addEventListener('resize',()=>{clearTimeout(window.__ft);window.__ft=setTimeout(fitHero,120);});
 </script>
 </body>
