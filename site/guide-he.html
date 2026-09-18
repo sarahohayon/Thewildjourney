@@ -22,7 +22,7 @@
   section{padding:70px 0}
 
   /* hero — forest above, sea below, no photographs */
-  .lp-hero{position:relative;display:flex;align-items:center;overflow:hidden;padding:0;background:var(--cream)}
+  .lp-hero{position:relative;display:flex;align-items:center;overflow:hidden;padding:0;background:var(--cream);min-height:calc(100vh - 72px)}
   .hero-band{position:absolute;max-width:none;left:0;width:100%;line-height:0;pointer-events:none;z-index:1}
   .hero-band svg{width:100%;height:100%;display:block}
   .hero-band-forest{top:0;height:clamp(70px,11vw,140px)}
@@ -30,7 +30,7 @@
   .lp-hero .container{position:relative;z-index:2;width:100%;
       padding-top:clamp(110px,15vw,190px);padding-bottom:clamp(110px,15vw,190px)}
   .lp-wrap{max-width:900px;margin:0 auto;text-align:center}
-  .lp-hero h1{color:var(--forest);font-size:clamp(1.85rem,4.2vw,2.9rem);max-width:26ch;margin:0 auto .5em}
+  .lp-hero h1{color:var(--forest);font-size:clamp(1.7rem,3.6vw,2.7rem);max-width:34ch;margin:0 auto .5em}
   .lp-hero .kicker{color:var(--earth)}
   .lp-hero .sub{color:#3a4237;font-size:1.12rem;max-width:46ch;margin:0 auto 1.6em}
 
@@ -56,26 +56,9 @@
   .is-sent .form-body{display:none}
   .is-sent .thanks{display:block}
 
-  /* what's inside */
-  .inside{max-width:900px;margin:0 auto}
-  .inside-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 30px;margin-top:26px}
-  .inside-grid div{display:flex;gap:12px;align-items:flex-start;font-size:1rem;color:#3a4237}
-  .inside-grid .n{font-family:var(--serif);color:var(--tide);font-weight:500;min-width:1.6em;opacity:.7}
-  @media(max-width:760px){.inside-grid{grid-template-columns:1fr}}
 
-  .note{background:#fff;border-right:4px solid var(--ochre);border-radius:14px;padding:22px 24px;
-        max-width:760px;margin:36px auto 0;font-size:.98rem;color:#3a4237}
-  .note strong{color:var(--forest)}
 
-  /* about */
-  .about{max-width:760px;margin:0 auto;text-align:center}
-  .about h2{margin-bottom:.4em}
-  .about p{text-align:right}
-  .wave-rule{width:150px;margin:0 auto 22px;line-height:0}
-  .wave-rule svg{width:100%;height:auto;display:block}
 
-  .final{text-align:center}
-  .final .btn{margin-top:18px}
 </style>
 </head>
 <body>
@@ -83,12 +66,6 @@
 <header class="nav">
   <div class="nav-inner">
     <a class="brand" href="index.html">Human Nature <span>Healing</span></a>
-    <nav class="nav-links" id="navLinks">
-      <a href="#inside">מה יש במדריך</a>
-      <a href="#about">מי אני</a>
-      <a class="nav-cta" href="#get">לקבלת המדריך</a>
-    </nav>
-    <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">&#9776;</button>
   </div>
 </header>
 
@@ -141,85 +118,12 @@
   </div>
 </section>
 
-<!-- ============ WHAT'S INSIDE ============ -->
-<section id="inside">
-  <div class="container inside">
-    <p class="kicker center">מה יש בפנים</p>
-    <h2 class="center">עשרה כלים, וגם למה הם עובדים</h2>
-    <p class="lead center" style="max-width:52ch;margin:0 auto">
-      המדריך נפתח בהסבר קצר וברור על טראומה מורכבת ועל מה שמייחד טראומת ילדות, וממשיך בעשרה כלים שליוו אותי בדרך — כל אחד עם המחקר שעומד מאחוריו.
-    </p>
-
-    <div class="inside-grid">
-      <div><span class="n">1</span><span>שחייה בים</span></div>
-      <div><span class="n">2</span><span>לעבוד דרך הגוף</span></div>
-      <div><span class="n">3</span><span>יוגה</span></div>
-      <div><span class="n">4</span><span>EMDR</span></div>
-      <div><span class="n">5</span><span>לבחור מה נכנס למוח שלי בבוקר</span></div>
-      <div><span class="n">6</span><span>ללכת הרבה בטבע</span></div>
-      <div><span class="n">7</span><span>להבין מה זו CPTSD</span></div>
-      <div><span class="n">8</span><span>לפתח חמלה עצמית</span></div>
-      <div><span class="n">9</span><span>להחזיר לעצמך הובלה ובחירה</span></div>
-      <div><span class="n">10</span><span>להתמיד</span></div>
-    </div>
-
-    <div class="note">
-      <strong>מה זה לא.</strong> זו לא רשימה של עשרה דברים שמרפאים CPTSD, כי רשימה כזאת לא קיימת. אלה הדברים שעזרו לי, וליד כל אחד מהם כתוב בכנות מה המחקר כן מראה ומה עדיין לא.<br><br>
-      אני לא פסיכולוגית ולא מטפלת. אני חוקרת, ואישה שצמחה מטראומות ילדות לחיים של חופש והגשמה. המדריך אינו תחליף לליווי מקצועי בזמן משבר חריף.
-    </div>
-  </div>
-</section>
-
-<!-- ============ ABOUT ============ -->
-<section class="section-tint" id="about">
-  <div class="container">
-    <div class="about">
-      <div class="wave-rule"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 40" width="400" height="40" preserveAspectRatio="none"><path d="M0,16.0 L8,16.8 L16,17.7 L24,18.5 L32,19.3 L40,20.0 L48,20.7 L56,21.4 L64,21.9 L72,22.5 L80,22.9 L88,23.3 L96,23.6 L104,23.8 L112,24.0 L120,24.0 L128,24.0 L136,23.8 L144,23.6 L152,23.3 L160,22.9 L168,22.5 L176,21.9 L184,21.4 L192,20.7 L200,20.0 L208,19.3 L216,18.5 L224,17.7 L232,16.8 L240,16.0 L248,15.2 L256,14.3 L264,13.5 L272,12.7 L280,12.0 L288,11.3 L296,10.6 L304,10.1 L312,9.5 L320,9.1 L328,8.7 L336,8.4 L344,8.2 L352,8.0 L360,8.0 L368,8.0 L376,8.2 L384,8.4 L392,8.7 L400,9.1 L400,40 L0,40 Z" fill="#6FA3A4" opacity="0.17"/><path d="M0,30.4 L8,30.1 L16,29.5 L24,28.9 L32,28.2 L40,27.4 L48,26.5 L56,25.6 L64,24.6 L72,23.7 L80,22.7 L88,21.7 L96,20.8 L104,20.0 L112,19.3 L120,18.6 L128,18.1 L136,17.7 L144,17.4 L152,17.2 L160,17.2 L168,17.3 L176,17.6 L184,18.0 L192,18.5 L200,19.2 L208,19.9 L216,20.7 L224,21.6 L232,22.5 L240,23.5 L248,24.5 L256,25.4 L264,26.4 L272,27.3 L280,28.1 L288,28.8 L296,29.5 L304,30.0 L312,30.4 L320,30.7 L328,30.8 L336,30.8 L344,30.6 L352,30.4 L360,29.9 L368,29.4 L376,28.8 L384,28.0 L392,27.2 L400,26.3 L400,40 L0,40 Z" fill="#356E77" opacity="0.26"/><path d="M0,29.7 L8,28.8 L16,28.1 L24,27.5 L32,27.1 L40,26.9 L48,26.8 L56,27.0 L64,27.3 L72,27.8 L80,28.5 L88,29.3 L96,30.2 L104,31.1 L112,32.1 L120,33.1 L128,34.1 L136,35.0 L144,35.7 L152,36.3 L160,36.8 L168,37.1 L176,37.2 L184,37.1 L192,36.8 L200,36.4 L208,35.7 L216,35.0 L224,34.1 L232,33.1 L240,32.1 L248,31.1 L256,30.2 L264,29.3 L272,28.5 L280,27.8 L288,27.3 L296,27.0 L304,26.8 L312,26.9 L320,27.1 L328,27.5 L336,28.1 L344,28.8 L352,29.7 L360,30.6 L368,31.6 L376,32.6 L384,33.6 L392,34.5 L400,35.4 L400,40 L0,40 Z" fill="#3E6357" opacity="0.55"/></svg></div>
-      <div>
-        <p class="kicker">מי כותבת</p>
-        <h2>ד״ר שרה אוחיון</h2>
-        <p>אני אקולוגית ימית, חוקרת ואשת שמירת טבע — ואני גם אישה שגדלה עם טראומת ילדות, ובמשך שנים ניסתה להבין איך יכול להיות שהחיים שלה נראים מבחוץ כל כך מתפקדים, ובפנים היא נאבקת כמעט בכל תחום.</p>
-        <p>את רוב חיי הבוגרים ביליתי ליד הים ובטבע. האהבה לים התחילה בילדות, הפכה למקצוע, ובעשור האחרון קיבלה משמעות נוספת: גיליתי שהים והטבע הם גם מהמקומות שבהם אני מצליחה לחזור לעצמי.</p>
-        <p>למדריך הזה אני מביאה שני דברים שאני מכירה היטב: את המחקר, שאני יודעת לקרוא ולבחון, ואת הניסיון שלי מתוך גוף שלמד לאט שאפשר לחיות גם אחרת.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FINAL CTA ============ -->
-<section class="section-forest">
-  <div class="container final">
-    <h2>המדריך מחכה לך</h2>
-    <p style="max-width:44ch;margin:0 auto;color:#e6e2d7">משאירים מייל, ומקבלים אותו מיד — בלי עלות ובלי התחייבות.</p>
-    <a class="btn btn-light" href="#get">לקבלת המדריך</a>
-  </div>
-</section>
 
 <footer>
   <div class="container">
-    <div class="foot-grid">
-      <div>
-        <div class="foot-brand">Human Nature Healing</div>
-        <p style="max-width:40ch;color:#c9c5b9">ריפוי סומטי מבוסס טבע, לגוף שעדיין מחזיק את העבר — על האדמה, ובמים.</p>
-      </div>
-      <div>
-        <div class="foot-h">המדריך</div>
-        <div class="foot-links">
-          <a href="#inside">מה יש בפנים</a>
-          <a href="#about">מי אני</a>
-          <a href="#get">לקבלת המדריך</a>
-        </div>
-      </div>
-      <div>
-        <div class="foot-h">קשר</div>
-        <div class="foot-links">
-          <a href="https://instagram.com/sarah.healingnature">אינסטגרם</a>
-          <a href="index.html">האתר באנגלית</a>
-        </div>
-      </div>
-    </div>
-    <p class="disclaimer">המדריך מבוסס על ניסיון אישי ועל ספרות מחקרית, ואינו תחליף לטיפול פסיכולוגי, לאבחון או לייעוץ רפואי. אם את נמצאת במצוקה נפשית חריפה, מומלץ לפנות לאיש מקצוע.</p>
-    <p class="copyright">© 2026 Human Nature Healing · ד״ר שרה אוחיון</p>
+    <p class="disclaimer">המדריך מבוסס על ניסיון אישי ועל ספרות מחקרית, ואינו תחליף לליווי מקצועי בזמן משבר חריף.</p>
+    <p class="copyright">© 2026 Human Nature Healing · ד״ר שרה אוחיון ·
+      <a href="https://instagram.com/sarah.healingnature" style="color:inherit">אינסטגרם</a></p>
   </div>
 </footer>
 
