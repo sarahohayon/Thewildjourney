@@ -51,7 +51,9 @@
   .consent a{color:var(--tide);text-decoration:underline}
   .thanks{display:none;text-align:center;padding:14px 0}
   .thanks h2{margin-bottom:.3em}
-  .thanks p{font-size:.98rem;color:#3a4237;margin:0}
+  .thanks p{font-size:.98rem;color:#3a4237;margin:0 0 .7em}
+  .thanks p:last-child{margin:0}
+  .thanks .thanks-note{font-size:.88rem;color:var(--stone)}
   .form-err{display:none;font-size:.85rem;color:var(--clay);margin-top:10px}
   .is-sent .form-body{display:none}
   .is-sent .thanks{display:block}
@@ -82,15 +84,11 @@
       <div class="card" id="signup">
         <div class="form-body">
           <h2>לאן לשלוח את המדריך?</h2>
-          <p class="hint">משאירים מייל, והמדריך מגיע מיד לתיבה.</p>
+          <p class="hint">משאירים מייל, מאשרים בלחיצה אחת, והמדריך אצלך.</p>
 
-          <!-- =====================================================================
-               להחליף את ה-action בכתובת הטופס שלך ב-Kit:
-               https://app.kit.com/forms/<מספר-הטופס-שלך>/subscriptions
-               (Kit → Grow → Landing Pages & Forms → הטופס שלך → Embed → HTML)
-               ===================================================================== -->
+          <!-- הטופס נשלח ל-Kit, טופס מספר 9934464 -->
           <form id="guideForm"
-                action="https://app.kit.com/forms/REPLACE_WITH_YOUR_FORM_ID/subscriptions"
+                action="https://app.kit.com/forms/9934464/subscriptions"
                 method="post">
             <div class="field">
               <label for="fn">השם שלך</label>
@@ -110,8 +108,9 @@
         </div>
 
         <div class="thanks">
-          <h2>יצא לדרך 🌿</h2>
-          <p>המדריך בדרך למייל שלך. אם הוא לא מופיע תוך כמה דקות, שווה להציץ בתיקיית הקידומים או הספאם — ולסמן אותו כ״לא ספאם״ כדי שהמיילים הבאים יגיעו ישר לתיבה.</p>
+          <h2>כמעט שם 🌿</h2>
+          <p><strong>שלחתי לך מייל אחד קצר עם כפתור אישור.</strong> לחיצה עליו, והמדריך יגיע אלייך מיד.</p>
+          <p class="thanks-note">אם הוא לא מופיע תוך כמה דקות, שווה להציץ בתיקיית הקידומים או הספאם — ולסמן אותו כ״לא ספאם״, כדי שגם מה שאשלח לך בהמשך יגיע ישר לתיבה.</p>
         </div>
       </div>
     </div>
@@ -137,7 +136,7 @@
     if (!form) return;
 
     form.addEventListener('submit', function (e) {
-      if (form.action.indexOf('REPLACE_WITH_YOUR_FORM_ID') !== -1) return; // עדיין לא חובר — שליחה רגילה
+      if (form.action.indexOf('9934464') !== -1) return; // עדיין לא חובר — שליחה רגילה
       e.preventDefault();
       err.style.display = 'none';
       var btn = form.querySelector('button[type=submit]');
