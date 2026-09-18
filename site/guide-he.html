@@ -55,13 +55,31 @@
   .thanks p:last-child{margin:0}
   .thanks .thanks-note{font-size:.88rem;color:var(--stone)}
   .form-err{display:none;font-size:.85rem;color:var(--clay);margin-top:10px}
-  .is-sent .form-body{display:none}
-  .is-sent .thanks{display:block}
+  .formkit-form{margin:0}
+  .formkit-alert{list-style:none;margin:0 0 12px;padding:0}
+  .formkit-alert:empty{display:none}
+  .formkit-alert-error{background:#fde8e2;border:1px solid #f2643b;color:#b8400f;
+        border-radius:12px;padding:10px 14px;font-size:.88rem}
+  .formkit-alert-error li{list-style:none}
+  .formkit-spinner{display:none}
+  .formkit-submit[data-active] .formkit-spinner{display:-webkit-box;display:flex;
+        position:absolute;top:0;left:0;right:0;height:100%;align-items:center;justify-content:center;gap:5px}
+  .formkit-submit[data-active] .formkit-spinner div{width:9px;height:9px;border-radius:50%;
+        background:#fff;opacity:.85;animation:ckb 1.4s infinite ease-in-out both}
+  .formkit-submit[data-active] .formkit-spinner div:nth-child(1){animation-delay:-.32s}
+  .formkit-submit[data-active] .formkit-spinner div:nth-child(2){animation-delay:-.16s}
+  .formkit-submit[data-active] span{opacity:0}
+  .formkit-submit{position:relative}
+  @keyframes ckb{0%,80%,100%{transform:scale(0)}40%{transform:scale(1)}}
+  /* Kit swaps the form for this once the signup succeeds */
+  .formkit-alert-success,.seva-custom-content{background:transparent;border:0;color:var(--forest);
+        font-family:var(--serif);font-size:1.1rem;line-height:1.7;text-align:center;padding:14px 4px;margin:0}
 
 
 
 
 </style>
+<script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 </head>
 <body>
 
@@ -86,32 +104,33 @@
           <h2>לאן לשלוח את המדריך?</h2>
           <p class="hint">משאירים מייל, מאשרים בלחיצה אחת, והמדריך אצלך.</p>
 
-          <!-- הטופס נשלח ל-Kit, טופס מספר 9934464 -->
-          <iframe name="kitSink" id="kitSink" style="display:none;width:0;height:0;border:0" title="" aria-hidden="true"></iframe>
-          <form id="guideForm" target="kitSink"
-                action="https://app.kit.com/forms/9934464/subscriptions"
-                method="post">
-            <div class="field">
-              <label for="fn">השם שלך</label>
-              <input id="fn" type="text" name="fields[first_name]" autocomplete="given-name" placeholder="איך לפנות אלייך?">
+          <form action="https://app.kit.com/forms/9934464/subscriptions"
+                class="seva-form formkit-form" method="post"
+                data-sv-form="9934464" data-uid="19648b1461"
+                data-format="inline" data-version="5"
+                data-options="{&quot;settings&quot;: {&quot;after_subscribe&quot;: {&quot;action&quot;: &quot;message&quot;, &quot;success_message&quot;: &quot;כמעט שם 🌿  שלחתי לך מייל אחד קצר עם כפתור אישור — לחיצה עליו, והמדריך יגיע אלייך מיד. אם הוא לא מופיע תוך כמה דקות, שווה להציץ בתיקיית הקידומים או הספאם, ולסמן אותו כ״לא ספאם״.&quot;, &quot;redirect_url&quot;: &quot;&quot;}, &quot;analytics&quot;: {&quot;google&quot;: null, &quot;fathom&quot;: null, &quot;facebook&quot;: null, &quot;segment&quot;: null, &quot;pinterest&quot;: null, &quot;sparkloop&quot;: null, &quot;googletagmanager&quot;: null}, &quot;modal&quot;: {&quot;trigger&quot;: &quot;timer&quot;, &quot;scroll_percentage&quot;: null, &quot;timer&quot;: 5, &quot;devices&quot;: &quot;all&quot;, &quot;show_once_every&quot;: 15}, &quot;powered_by&quot;: {&quot;show&quot;: false, &quot;url&quot;: &quot;https://kit.com/features/forms&quot;}, &quot;recaptcha&quot;: {&quot;enabled&quot;: false}, &quot;return_visitor&quot;: {&quot;action&quot;: &quot;show&quot;, &quot;custom_content&quot;: &quot;&quot;}, &quot;slide_in&quot;: {&quot;display_in&quot;: &quot;bottom_right&quot;, &quot;trigger&quot;: &quot;timer&quot;, &quot;scroll_percentage&quot;: null, &quot;timer&quot;: 5, &quot;devices&quot;: &quot;all&quot;, &quot;show_once_every&quot;: 15}, &quot;sticky_bar&quot;: {&quot;display_in&quot;: &quot;top&quot;, &quot;trigger&quot;: &quot;timer&quot;, &quot;scroll_percentage&quot;: null, &quot;timer&quot;: 5, &quot;devices&quot;: &quot;all&quot;, &quot;show_once_every&quot;: 15}}, &quot;version&quot;: &quot;5&quot;}">
+            <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+            <div data-element="fields" class="seva-fields formkit-fields">
+              <div class="field">
+                <label for="fn">השם שלך</label>
+                <input id="fn" class="formkit-input" type="text" name="fields[first_name]"
+                       autocomplete="given-name" placeholder="איך לפנות אלייך?">
+              </div>
+              <div class="field">
+                <label for="em">כתובת מייל</label>
+                <input id="em" class="formkit-input" type="email" name="email_address"
+                       required autocomplete="email" placeholder="you@example.com">
+              </div>
+              <button data-element="submit" class="btn btn-primary formkit-submit formkit-submit" type="submit">
+                <div class="formkit-spinner"><div></div><div></div><div></div></div>
+                <span>שלחו לי את המדריך</span>
+              </button>
             </div>
-            <div class="field">
-              <label for="em">כתובת מייל</label>
-              <input id="em" type="email" name="email_address" required autocomplete="email" placeholder="you@example.com">
-            </div>
-            <button class="btn btn-primary" type="submit">שלחו לי את המדריך</button>
-            <p class="form-err" id="formErr">משהו לא עבד. אפשר לנסות שוב בעוד רגע.</p>
           </form>
 
           <p class="consent">
             בהשארת המייל את מאשרת שאשלח לך את המדריך ומדי פעם עוד תוכן בנושא. אפשר להסיר את עצמך בלחיצה אחת בתחתית כל מייל, ואני לא מעבירה כתובות לאף אחד.
           </p>
-        </div>
-
-        <div class="thanks">
-          <h2>כמעט שם 🌿</h2>
-          <p><strong>שלחתי לך מייל אחד קצר עם כפתור אישור.</strong> לחיצה עליו, והמדריך יגיע אלייך מיד.</p>
-          <p class="thanks-note">אם הוא לא מופיע תוך כמה דקות, שווה להציץ בתיקיית הקידומים או הספאם — ולסמן אותו כ״לא ספאם״, כדי שגם מה שאשלח לך בהמשך יגיע ישר לתיבה.</p>
         </div>
       </div>
     </div>
@@ -128,21 +147,6 @@
 </footer>
 
 <script>
-  // הטופס נשלח ל-Kit לתוך iframe מוסתר — שליחה רגילה של הדפדפן,
-  // בלי חסימות בין אתרים, והמבקרת נשארת בעמוד.
-  (function () {
-    var form = document.getElementById('guideForm');
-    var card = document.getElementById('signup');
-    if (!form) return;
-
-    form.addEventListener('submit', function () {
-      var btn = form.querySelector('button[type=submit]');
-      btn.disabled = true;
-      btn.textContent = 'רגע\u2026';
-      setTimeout(function () { card.classList.add('is-sent'); }, 900);
-    });
-  })();
-
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('in'); });
   }, { threshold: .12 });
